@@ -1,0 +1,19 @@
+﻿@model List<Ingredient>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@foreach (Ingredient ingredient in Model)
+{
+    <p>
+        @ingredient.Name <a href="/Ingredients/Show/@ingredient.Id">Show</a>
+        <form action="/Ingredients/Delete/@ingredient.Id" method="post">
+            <button>Delete</button>
+        </form>
+        
+    </p>
+}
+
+<a href="/Ingredients/Create">Create ingredient</a>
